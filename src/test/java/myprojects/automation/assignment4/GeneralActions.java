@@ -55,7 +55,7 @@ public class GeneralActions {
         //check Настройки обновлены.
         waitForContentLoad(By.className("growl-message"));
         Assert.assertEquals(driver.findElement(By.className("growl-message")).getText(),
-                "Настройки обновлены.", "Wrong message: ");
+                "Настройки обновлены.", "Wrong message for product availability: ");
         driver.findElement(By.className("growl-close")).click();
         driver.findElement(By.cssSelector(".btn.btn-primary.js-btn-save")).click();
         waitForContentLoad(By.className("growl-message"));
@@ -66,7 +66,6 @@ public class GeneralActions {
 
     public void checkProduct(ProductData newProduct) {
         driver.get(Properties.getBaseUrl());
-//        driver.findElement(By.cssSelector(".all-product-link>i"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView(true);",
                 driver.findElement(By.cssSelector(".all-product-link>i")));
