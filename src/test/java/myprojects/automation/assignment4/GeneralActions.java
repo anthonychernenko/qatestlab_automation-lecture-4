@@ -96,10 +96,7 @@ public class GeneralActions {
      * Waits until page loader disappears from the page
      */
     private void waitForContentLoad(By by) {
-        // TODO implement generic method to wait until page content is loaded
-
          wait.until(ExpectedConditions.elementToBeClickable(by));
-        // ...
     }
 
     private Boolean isClickable(By by) {
